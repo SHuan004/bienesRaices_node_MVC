@@ -2,8 +2,8 @@ import nodemailer from 'nodemailer'
 
 const emailRegistro = async (datos) => {
     const transport = nodemailer.createTransport({
-        host: process.env.EMAIL_HOST,
-        auth: {
+      service: 'gmail',
+      auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_PASSWORD
         }
@@ -14,7 +14,7 @@ const emailRegistro = async (datos) => {
       // Enviar Email
 
       await transport.sendMail({
-        from: 'sebax2345@gmail.com',
+        from: `${process.env.EMAIL_USE}`,
         to: email,
         subject: 'Confirma tu cuenta en BienesRaices.com',
         text: `Confirma tu cuenta en BienesRaices.com`,
