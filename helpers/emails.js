@@ -14,7 +14,7 @@ const emailRegistro = async (datos) => {
       // Enviar Email
 
       await transport.sendMail({
-        from: `${process.env.EMAIL_USE}`,
+        from: `"Bienes Raices"<${process.env.EMAIL_USE}>`,
         to: email,
         subject: 'Confirma tu cuenta en BienesRaices.com',
         text: `Confirma tu cuenta en BienesRaices.com`,
